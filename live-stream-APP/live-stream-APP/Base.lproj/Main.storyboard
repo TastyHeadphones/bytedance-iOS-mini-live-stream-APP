@@ -1,30 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aoz-ut-5vB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aoz-ut-5vB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="hu0-cc-Y1j">
             <objects>
-                <viewController id="Aoz-ut-5vB" customClass="ViewController" customModule="live_stream_APP" customModuleProvider="target" sceneMemberID="viewController">
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="ItD-Bt-u2d" customClass="VideoView" customModule="live_stream_APP" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <viewLayoutGuide key="safeArea" id="8DG-Nd-ggD"/>
-                        <viewLayoutGuide key="contentLayoutGuide" id="kcg-ub-RIp"/>
-                        <viewLayoutGuide key="frameLayoutGuide" id="lhe-Oa-nER"/>
-                    </scrollView>
-                    <connections>
-                        <outlet property="videoView" destination="ItD-Bt-u2d" id="I5E-ec-hsx"/>
-                    </connections>
-                </viewController>
+                <viewController id="Aoz-ut-5vB" customClass="ViewController" customModule="live_stream_APP" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wWv-zg-lIU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42" y="-5"/>
+            <point key="canvasLocation" x="-42.028985507246382" y="-5.3571428571428568"/>
         </scene>
     </scenes>
 </document>

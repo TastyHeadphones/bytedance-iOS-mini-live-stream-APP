@@ -8,91 +8,40 @@
 import UIKit
 import AVKit
 
-class ViewController: UIViewController,UIScrollViewDelegate {
-    
-    @IBOutlet var videoView: VideoView!
+class ViewController: UIViewController {
+    private var videoView: UICollectionView?
     
     override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-
-        videoView.frame = view.bounds
-        videoView.delegate = self
-        videoView.showsVerticalScrollIndicator = false
-        videoView.showsHorizontalScrollIndicator = false
-        videoView.backgroundColor = .black
-        
-        var yPos = 0
-        VideoDataSource.sharedInstance.videos.forEach { (video) in
-            let playerViewController =  makePlayerViewController(player: video.player, yPos:CGFloat(yPos))
-            let titleLabel = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 50));
-            titleLabel.text = "字节项目第\(video.id)个视频"
-            titleLabel.textColor = .red
-            playerViewController.contentOverlayView?.addSubview(titleLabel)
-            videoView.addSubview(playerViewController.view)
-            self.addChild(playerViewController)
-            yPos = yPos + Int(UIScreen.main.bounds.height)
-        }
-        
-        VideoDataSource.sharedInstance.currentIndex = 0
-        
-        videoView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * CGFloat((VideoDataSource.sharedInstance.videos.count)))
-        
-        videoView.showsVerticalScrollIndicator = false
-        videoView.showsHorizontalScrollIndicator = false
-        
-        videoView.contentInsetAdjustmentBehavior = .never
-        videoView.isPagingEnabled = true
-        
-        print("scrollView Added")
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: view.frame.width, height: view.frame.height)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        videoView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        videoView?.register(VideoCell.self, forCellWithReuseIdentifier: VideoCell.identifer)
+        videoView?.isPagingEnabled = true
+        videoView?.dataSource = self
+        videoView?.backgroundColor = .red
+        view.addSubview(videoView!)
     }
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-////        print("good")
-//        if (videoView.contentOffset.y >= view.frame.height) {  // 上滑
-////            videoView.player.pause()
-//            videoView.contentOffset = CGPoint(x: 0, y: view.frame.height)
-//            print("up")
-//        }
-//        else if(videoView.contentOffset.y < 0){
-//            videoView.contentOffset = CGPoint(x: 0, y: view.frame.height)
-//            print("down")
-//        }
-//    }
-    
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//
-//        let translatedPoint = scrollView.panGestureRecognizer.translation(in: scrollView)
-//
-//        if (translatedPoint.y >= 50) {  // 上滑
-////            videoView.player.pause()
-//            videoView.contentOffset = CGPoint(x: 0, y: view.frame.height)
-//            print("up")
-//        }
-//        else if(translatedPoint.y <= -50){
-//            videoView.contentOffset = CGPoint(x: 0, y: view.frame.height)
-//            print("down")
-//        }
-//    }
-    func makePlayerViewController(player: AVPlayer, yPos: CGFloat) -> AVPlayerViewController{
-        
-        let playerViewController = AVPlayerViewController()
-        playerViewController.player = player
-        playerViewController.showsPlaybackControls = false
-        playerViewController.videoGravity = .resizeAspect
-        playerViewController.view.backgroundColor = .black
-        playerViewController.view.frame = CGRect(x: 0, y: yPos, width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        return playerViewController
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let index = Int(scrollView.contentOffset.y / UIScreen.main.bounds.height)
-        
-        if VideoDataSource.sharedInstance.currentIndex != index {
-            VideoDataSource.sharedInstance.currentIndex = index
-        }
+    override func viewDidLayoutSubviews() {
+        videoView?.frame = view.bounds
     }
     
 }
-
+extension ViewController:UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = videoView?.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath) as! VideoCell
+        cell.bounds = UIScreen.main.bounds
+//        cell.configure(with: )
+        
+        return cell
+    }
+    
+    
+    
+}

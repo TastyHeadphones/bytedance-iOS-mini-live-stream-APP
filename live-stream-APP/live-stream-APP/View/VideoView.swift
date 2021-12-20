@@ -7,8 +7,7 @@
 
 import UIKit
 import AVKit
-class VideoView:UIScrollView{
-    let player = AVPlayer()
+class VideoView:UICollectionView{
     
     
     

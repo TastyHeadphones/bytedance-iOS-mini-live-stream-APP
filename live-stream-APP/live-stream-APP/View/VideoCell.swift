@@ -12,14 +12,32 @@ class VideoCell: UICollectionViewCell {
     var player: AVPlayer?
     
     public func configure(with video:Video){
-        player = AVPlayer(url:URL(fileURLWithPath: Bundle.main.path(forResource: "demo1", ofType: "MP4")!))
-        
+        player = video.player
         let layer = AVPlayerLayer(player: player)
+        layer.frame = contentView.bounds
         layer.videoGravity = .resizeAspectFill
-        
-        let playerViewController = AVPlayerViewController()
-        playerViewController.player = player
-        
-        self.addSubview(playerViewController.view)
+        contentView.layer.addSublayer(layer)
+        video.player.play()
+    }
+    
+    override func prepareForReuse() {
+        player = nil
+        print("reuse cell")
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.backgroundColor = .black
+        contentView.clipsToBounds = true
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func playerItemDidReachEnd(notification: Notification) {
+        if let playerItem = notification.object as? AVPlayerItem {
+            playerItem.seek(to: CMTime.zero, completionHandler: nil)
+        }
     }
 }

@@ -9,7 +9,10 @@ import UIKit
 import AVKit
 
 class ViewController: UIViewController {
-    private var videoView: UICollectionView?
+    
+    
+    @IBOutlet var videoView: VideoView!
+
     
     override func viewDidLoad() {
         let layout = UICollectionViewFlowLayout()
@@ -19,15 +22,13 @@ class ViewController: UIViewController {
         //切换视频时消除间隙 使每个视频都能够覆盖屏幕
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        videoView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        videoView?.register(VideoCell.self, forCellWithReuseIdentifier: VideoCell.identifer)
+        videoView.frame = .zero
+        videoView.collectionViewLayout = layout
+
         videoView?.isPagingEnabled = true
         videoView?.dataSource = self
         videoView?.backgroundColor = .black
-//        videoView?.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-//        videoView?.automaticallyAdjustsScrollIndicatorInsets = false
-
-        view.addSubview(videoView!)
+        //消除顶端和底部的间隙
         videoView?.contentInsetAdjustmentBehavior = .never
     }
     
@@ -42,9 +43,14 @@ extension ViewController:UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = videoView?.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath) as! VideoCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath) as! VideoCell
         
         cell.configure(with: VideoDataSource.sharedInstance.videos[indexPath.row])
         return cell
     }
+}
+
+extension ViewController:UICollectionViewDelegate{
+    
+    
 }

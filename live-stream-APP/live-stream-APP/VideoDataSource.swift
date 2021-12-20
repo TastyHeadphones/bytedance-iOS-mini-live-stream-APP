@@ -8,6 +8,7 @@ import AVFoundation
 struct Video : Identifiable {
     var id : Int
     var player : AVPlayer
+    var isLiked: Bool = false
 }
 
 class VideoDataSource {

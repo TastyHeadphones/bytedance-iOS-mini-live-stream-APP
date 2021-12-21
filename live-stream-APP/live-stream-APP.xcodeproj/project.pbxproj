@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3720268A277176450092B904 /* CommentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37202689277176450092B904 /* CommentDataSource.swift */; };
 		374E18772767867D00B61C7A /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E18762767867D00B61C7A /* VideoCell.swift */; };
 		37911682277097860005EA77 /* Emoji.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37911681277097860005EA77 /* Emoji.xcassets */; };
 		37F1A70B275C467600FE66B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1A70A275C467600FE66B8 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37202689277176450092B904 /* CommentDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDataSource.swift; sourceTree = "<group>"; };
 		374E18762767867D00B61C7A /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		37911681277097860005EA77 /* Emoji.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Emoji.xcassets; path = "../../../bytedance-iOS-practice-project/basic functions/basic functions/Emoji.xcassets"; sourceTree = "<group>"; };
 		37F1A707275C467600FE66B8 /* live-stream-APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "live-stream-APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		372026882771762B0092B904 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				37F1A726275C968D00FE66B8 /* VideoDataSource.swift */,
+				37202689277176450092B904 /* CommentDataSource.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		374E1875276785B100B61C7A /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,12 +88,12 @@
 		37F1A709275C467600FE66B8 /* live-stream-APP */ = {
 			isa = PBXGroup;
 			children = (
+				372026882771762B0092B904 /* Data */,
 				374E1875276785B100B61C7A /* View */,
 				37F1A721275C486000FE66B8 /* Resource */,
 				37F1A70A275C467600FE66B8 /* AppDelegate.swift */,
 				37F1A70C275C467600FE66B8 /* SceneDelegate.swift */,
 				37F1A70E275C467600FE66B8 /* ViewController.swift */,
-				37F1A726275C968D00FE66B8 /* VideoDataSource.swift */,
 				37F1A710275C467600FE66B8 /* Main.storyboard */,
 				37F1A716275C467700FE66B8 /* Assets.xcassets */,
 				37911681277097860005EA77 /* Emoji.xcassets */,
@@ -179,6 +190,7 @@
 				37F1A727275C968D00FE66B8 /* VideoDataSource.swift in Sources */,
 				37F1A725275C4F6200FE66B8 /* VideoView.swift in Sources */,
 				37F1A70B275C467600FE66B8 /* AppDelegate.swift in Sources */,
+				3720268A277176450092B904 /* CommentDataSource.swift in Sources */,
 				37F1A70D275C467600FE66B8 /* SceneDelegate.swift in Sources */,
 				37F1A715275C467600FE66B8 /* live_stream_APP.xcdatamodeld in Sources */,
 			);

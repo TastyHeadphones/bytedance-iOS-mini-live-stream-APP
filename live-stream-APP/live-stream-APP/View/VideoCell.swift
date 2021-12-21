@@ -10,39 +10,49 @@ import AVKit
 
 class VideoCell: UICollectionViewCell {
     //    static let identifer = "videoCell"
-    var player: AVPlayer!
-    var isLiked: Bool!
-    
-    @IBAction func like(_ sender: UIButton) {
-        isLiked = !isLiked
-        
-        if isLiked{
-            sender.setImage(UIImage(systemName:"heart.fill")?.withTintColor(.red,
-                                                                             renderingMode: .alwaysOriginal), for: .normal)
-            likeAnimation(button: sender)
-        }
-        else{
-            sender.setImage(UIImage(systemName:"heart.fill")?.withTintColor(.white,
-                                                                             renderingMode: .alwaysOriginal), for: .normal)
+    @IBOutlet var commentView: UITableView!
+    var video: Video!
+    var isLiked:Bool!{
+        didSet{
+            if isLiked{
+                likeButton.setImage(UIImage(systemName:"heart.fill")?.withTintColor(.red,
+                                                                                    renderingMode: .alwaysOriginal), for: .normal)
+            }
+            else{
+                likeButton.setImage(UIImage(systemName:"heart.fill")?.withTintColor(.white,
+                                                                                    renderingMode: .alwaysOriginal), for: .normal)
+            }
         }
     }
+    
+    @IBAction func like(_ sender: UIButton) {
+        video.isLiked = !video.isLiked
+        isLiked = !isLiked
+//        self.video.isLiked = !self.video.isLiked
+//        print(VideoDataSource.sharedInstance.videos[video.id].isLiked)
+//        print(self.video.isLiked)
+        if video!.isLiked {likeAnimation(button: sender)}
+        
+    }
+    
+    
     @IBOutlet var likeButton: UIButton!
-    public func configure(with video:Video){
-        player = video.player
-        isLiked = video.isLiked
-        let layer = AVPlayerLayer(player: player)
+    public func configure(with video: Video){
+        self.video = video
+        self.isLiked = video.isLiked
+        let layer = AVPlayerLayer(player: self.video.player)
         layer.frame = contentView.bounds
         layer.videoGravity = .resizeAspectFill
         //将视频播放控件置于底部
         layer.zPosition = -1
         contentView.layer.addSublayer(layer)
-        video.player.play()
+        self.video.player.play()
     }
     
     override func prepareForReuse() {
-        player = nil
-        print("reuse cell")
+//        video = nil
     }
+    
     
     //MARK 点赞动画实现
     private func likeAnimation(button:UIButton){
@@ -73,10 +83,22 @@ class VideoCell: UICollectionViewCell {
         cell.emissionLongitude = -.pi / 2
         cell.emissionRange = .pi
         cell.contents = UIImage(named: "emoji_52")?.withTintColor(.white,
-                                                                        renderingMode: .alwaysOriginal).cgImage
+                                                                  renderingMode: .alwaysOriginal).cgImage
         emitterLayer.emitterCells = [cell]
         return emitterLayer
     }()
     
+}
+
+extension VideoCell:UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return video.comments.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath)
+        cell.textLabel?.text = video.comments[indexPath.row].words
+        return cell
+    }
 }
 

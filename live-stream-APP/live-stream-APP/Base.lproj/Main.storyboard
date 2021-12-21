@@ -39,14 +39,60 @@
                                                 <action selector="like:" destination="GeV-Ec-lDj" eventType="touchUpInside" id="Pon-pe-Av3"/>
                                             </connections>
                                         </button>
+                                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nya-cF-G1D">
+                                            <rect key="frame" x="0.0" y="226" width="207" height="368"/>
+                                            <subviews>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qWh-JE-qhw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="300"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="300" id="rjH-x0-4Vy"/>
+                                                    </constraints>
+                                                    <prototypes>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" id="K8t-Bm-jPg">
+                                                            <rect key="frame" x="0.0" y="44.5" width="207" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K8t-Bm-jPg" id="6nc-qt-rSv">
+                                                                <rect key="frame" x="0.0" y="0.0" width="207" height="43.5"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </tableViewCellContentView>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </tableViewCell>
+                                                    </prototypes>
+                                                </tableView>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZrQ-fi-1fk">
+                                                    <rect key="frame" x="0.0" y="300" width="207" height="68"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="qWh-JE-qhw" secondAttribute="trailing" id="0hc-W2-5Qc"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZrQ-fi-1fk" secondAttribute="trailing" id="Dqz-Ec-DH0"/>
+                                                <constraint firstItem="ZrQ-fi-1fk" firstAttribute="leading" secondItem="Nya-cF-G1D" secondAttribute="leading" id="Fy9-Vq-kKI"/>
+                                                <constraint firstItem="qWh-JE-qhw" firstAttribute="leading" secondItem="Nya-cF-G1D" secondAttribute="leading" id="MnY-mq-meQ"/>
+                                                <constraint firstAttribute="width" secondItem="Nya-cF-G1D" secondAttribute="height" multiplier="9:16" id="kff-Vw-ueJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZrQ-fi-1fk" secondAttribute="bottom" id="oAk-rW-goy"/>
+                                                <constraint firstItem="qWh-JE-qhw" firstAttribute="top" secondItem="Nya-cF-G1D" secondAttribute="top" id="wbg-I2-7kN"/>
+                                                <constraint firstItem="ZrQ-fi-1fk" firstAttribute="top" secondItem="qWh-JE-qhw" secondAttribute="bottom" id="wq1-JG-1py"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstItem="Nya-cF-G1D" firstAttribute="width" secondItem="0ZG-yB-LMG" secondAttribute="width" multiplier="0.5" id="8vF-YK-331"/>
+                                        <constraint firstItem="Nya-cF-G1D" firstAttribute="leading" secondItem="0ZG-yB-LMG" secondAttribute="leading" id="Ke7-aD-5Y9"/>
                                         <constraint firstAttribute="trailing" secondItem="PyI-So-P6X" secondAttribute="trailing" constant="10" id="ZoJ-of-tpN"/>
+                                        <constraint firstItem="Nya-cF-G1D" firstAttribute="centerY" secondItem="0ZG-yB-LMG" secondAttribute="centerY" id="a7b-hJ-SKF"/>
                                         <constraint firstItem="PyI-So-P6X" firstAttribute="centerY" secondItem="0ZG-yB-LMG" secondAttribute="centerY" id="kDS-Fl-Rrg"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="414" height="820"/>
                                 <connections>
+                                    <outlet property="commentView" destination="qWh-JE-qhw" id="lJp-WU-dNh"/>
                                     <outlet property="likeButton" destination="PyI-So-P6X" id="afq-U1-Usa"/>
                                 </connections>
                             </collectionViewCell>

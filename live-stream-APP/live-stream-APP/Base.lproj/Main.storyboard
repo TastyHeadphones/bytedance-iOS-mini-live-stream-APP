@@ -16,6 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g33-pU-37J">
                             <size key="itemSize" width="414" height="820"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -32,6 +33,7 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyI-So-P6X">
                                             <rect key="frame" x="358.5" y="394.5" width="45.5" height="31"/>
+                                            <gestureRecognizers/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" image="suit.heart.fill" catalog="system" title=""/>
@@ -82,6 +84,7 @@
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstItem="Nya-cF-G1D" firstAttribute="width" secondItem="0ZG-yB-LMG" secondAttribute="width" multiplier="0.5" id="8vF-YK-331"/>
                                         <constraint firstItem="Nya-cF-G1D" firstAttribute="leading" secondItem="0ZG-yB-LMG" secondAttribute="leading" id="Ke7-aD-5Y9"/>
@@ -90,6 +93,7 @@
                                         <constraint firstItem="PyI-So-P6X" firstAttribute="centerY" secondItem="0ZG-yB-LMG" secondAttribute="centerY" id="kDS-Fl-Rrg"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <gestureRecognizers/>
                                 <size key="customSize" width="414" height="820"/>
                                 <connections>
                                     <outlet property="commentView" destination="qWh-JE-qhw" id="lJp-WU-dNh"/>

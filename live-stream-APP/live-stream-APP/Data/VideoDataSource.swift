@@ -9,7 +9,7 @@ class Video{
     var id : Int
     var player : AVPlayer
     var isLiked:  Bool
-    var comments = [Comment(words: "Test"),Comment(words: "ByteDance")]
+    var comments = [Comment(words: "评论区:")]
     init(id : Int,player : AVPlayer,isLiked:Bool){
             self.id = id
             self.player = player

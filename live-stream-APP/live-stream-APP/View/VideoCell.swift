@@ -25,14 +25,18 @@ class VideoCell: UICollectionViewCell {
         }
     }
     
-    @IBAction func like(_ sender: UIButton) {
+    @IBAction func like(_ sender: Any) {
+        likeChange()
+    }
+    
+
+    
+    private func likeChange(){
         video.isLiked = !video.isLiked
         isLiked = !isLiked
-//        self.video.isLiked = !self.video.isLiked
-//        print(VideoDataSource.sharedInstance.videos[video.id].isLiked)
-//        print(self.video.isLiked)
-        if video!.isLiked {likeAnimation(button: sender)}
-        
+        if(isLiked){
+            likeAnimation(button: likeButton)
+        }
     }
     
     
@@ -46,6 +50,10 @@ class VideoCell: UICollectionViewCell {
         //将视频播放控件置于底部
         layer.zPosition = -1
         contentView.layer.addSublayer(layer)
+        //增加点赞控件
+        let tap = UITapGestureRecognizer(target: self, action: #selector(like))
+            tap.numberOfTapsRequired = 2
+        addGestureRecognizer(tap)
         self.video.player.play()
     }
     

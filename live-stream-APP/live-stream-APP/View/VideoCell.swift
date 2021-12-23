@@ -11,6 +11,8 @@ import AVKit
 class VideoCell: UICollectionViewCell {
     //    static let identifer = "videoCell"
     @IBOutlet var commentView: UITableView!
+    @IBOutlet var textField: UITextField!
+    
     var video: Video!
     var isLiked:Bool!{
         didSet{
@@ -29,6 +31,10 @@ class VideoCell: UICollectionViewCell {
         likeChange()
     }
     
+    @objc func dismissKeyboard(){
+        textField.resignFirstResponder()
+    }
+    
 
     
     private func likeChange(){
@@ -42,6 +48,7 @@ class VideoCell: UICollectionViewCell {
     
     @IBOutlet var likeButton: UIButton!
     public func configure(with video: Video){
+        
         self.video = video
         self.isLiked = video.isLiked
         let layer = AVPlayerLayer(player: self.video.player)
@@ -51,9 +58,13 @@ class VideoCell: UICollectionViewCell {
         layer.zPosition = -1
         contentView.layer.addSublayer(layer)
         //增加点赞控件
-        let tap = UITapGestureRecognizer(target: self, action: #selector(like))
-            tap.numberOfTapsRequired = 2
-        addGestureRecognizer(tap)
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(like))
+        doubleTap.numberOfTapsRequired = 2
+        addGestureRecognizer(doubleTap)
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        singleTap.numberOfTapsRequired = 1
+        addGestureRecognizer(singleTap)
+        textField.delegate = self
         self.video.player.play()
     }
     
@@ -66,11 +77,11 @@ class VideoCell: UICollectionViewCell {
     private func likeAnimation(button:UIButton){
         UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping:0.5, initialSpringVelocity: 0.5,options: [.allowUserInteraction],
                        animations: {
-            self.emitterLayer.birthRate = 5
-            button.layer.addSublayer(self.emitterLayer)
-            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { timer in
-                self.emitterLayer.birthRate = 0
-            }
+//            self.emitterLayer.birthRate = 5
+//            button.layer.addSublayer(self.emitterLayer)
+//            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { timer in
+//                self.emitterLayer.birthRate = 0
+//            }
             button.transform = CGAffineTransform(scaleX: 2.5, y: 2.5)
             button.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }, completion:nil)
@@ -106,7 +117,23 @@ extension VideoCell:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath)
         cell.textLabel?.text = video.comments[indexPath.row].words
+        cell.textLabel?.textColor = .white
         return cell
     }
 }
 
+//添加公屏评论
+extension VideoCell: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if let text = textField.text,!textField.text!.isEmpty{
+            print(text)
+            textField.text = ""
+            video.comments.append(Comment(words: text))
+            OperationQueue.main.addOperation {
+                self.commentView.reloadData()
+            }
+        }
+        return false
+    }
+}

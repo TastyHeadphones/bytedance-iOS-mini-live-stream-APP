@@ -13,6 +13,7 @@ class VideoCell: UICollectionViewCell {
     //    static let identifer = "videoCell"
     @IBOutlet var commentView: UITableView!
     @IBOutlet var textField: UITextField!
+    @IBOutlet var giftTableView: UITableView!
     
     var video: Video!
     //视频循环播放
@@ -21,6 +22,8 @@ class VideoCell: UICollectionViewCell {
             playerItem.seek(to: CMTime.zero, completionHandler: nil)
         }
     }
+    
+
     
     var isLiked:Bool!{
         didSet{
@@ -42,7 +45,7 @@ class VideoCell: UICollectionViewCell {
     @IBAction func gift(_ sender: UIButton){
         buttonAnimation(button: sender)
     }
-    
+        
     //双击点赞动画
     @objc func doubleClickHandle(recognizer:UITapGestureRecognizer){
         likeChange()

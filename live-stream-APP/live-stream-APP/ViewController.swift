@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     
     @IBOutlet var videoView: VideoView!
-    
+    var videoCell:VideoCell!
     
     override func viewDidLoad() {
         let layout = UICollectionViewFlowLayout()
@@ -37,6 +37,17 @@ class ViewController: UIViewController {
         videoView?.frame = UIScreen.main.bounds
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier{
+        case "gift"?:
+            let giftVC = segue.destination as! GiftViewController
+            giftVC.giftTableView = videoCell.giftTableView
+        default:
+            preconditionFailure("Unexpected segue identifier.")
+        }
+    }
+    
+        
 }
 extension ViewController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -49,6 +60,7 @@ extension ViewController:UICollectionViewDataSource{
 //        var video = VideoDataSource.sharedInstance.videos[indexPath.row]
         cell.configure(with: VideoDataSource.sharedInstance.videos[indexPath.row])
         cell.commentView.dataSource = cell.self
+        self.videoCell = cell
         return cell
     }
 }

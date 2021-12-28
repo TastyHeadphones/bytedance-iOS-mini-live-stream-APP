@@ -7,6 +7,7 @@
 
 import UIKit
 import AVKit
+import HWPanModal
 
 class VideoCell: UICollectionViewCell {
     //    static let identifer = "videoCell"
@@ -14,6 +15,13 @@ class VideoCell: UICollectionViewCell {
     @IBOutlet var textField: UITextField!
     
     var video: Video!
+    //视频循环播放
+    @objc func playerItemDidReachEnd(notification: Notification) {
+        if let playerItem = notification.object as? AVPlayerItem {
+            playerItem.seek(to: CMTime.zero, completionHandler: nil)
+        }
+    }
+    
     var isLiked:Bool!{
         didSet{
             if isLiked{
@@ -31,6 +39,36 @@ class VideoCell: UICollectionViewCell {
         likeChange()
     }
     
+    @IBAction func gift(_ sender: UIButton){
+        buttonAnimation(button: sender)
+    }
+    
+    //双击点赞动画
+    @objc func doubleClickHandle(recognizer:UITapGestureRecognizer){
+        likeChange()
+        let point = recognizer.location(in: self.contentView)
+//        print(point)
+        var image = UIImage(named: "emoji_24")
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
+        imageView.image = image
+        imageView.center = point
+        
+        let leftOrRight = arc4random() % 2
+        imageView.transform = imageView.transform.rotated(by: .pi / 9.0 * Double(leftOrRight))
+        
+        contentView.addSubview(imageView)
+        
+        UIView.animate(withDuration: 2) {
+            imageView.transform.scaledBy(x: 1.2, y: 1.2)
+            imageView.transform.scaledBy(x: 1.0, y: 1.0)
+            imageView.frame.origin.y = -100
+            imageView.alpha = 0.0
+        } completion: { finished in
+            imageView.removeFromSuperview()
+            image = nil
+        }
+    }
+    
     @objc func dismissKeyboard(){
         textField.resignFirstResponder()
     }
@@ -41,7 +79,7 @@ class VideoCell: UICollectionViewCell {
         video.isLiked = !video.isLiked
         isLiked = !isLiked
         if(isLiked){
-            likeAnimation(button: likeButton)
+            buttonAnimation(button: likeButton)
         }
     }
     
@@ -58,13 +96,20 @@ class VideoCell: UICollectionViewCell {
         layer.zPosition = -1
         contentView.layer.addSublayer(layer)
         //增加点赞控件
-        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(like))
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleClickHandle))
         doubleTap.numberOfTapsRequired = 2
         addGestureRecognizer(doubleTap)
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         singleTap.numberOfTapsRequired = 1
         addGestureRecognizer(singleTap)
         textField.delegate = self
+        //视频循环播放
+        self.video.player.actionAtItemEnd = .none
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(playerItemDidReachEnd(notification:)),
+                                               name: .AVPlayerItemDidPlayToEndTime,
+                                               object: self.video.player.currentItem)
+        
         self.video.player.play()
     }
     
@@ -74,7 +119,7 @@ class VideoCell: UICollectionViewCell {
     
     
     //MARK 点赞动画实现
-    private func likeAnimation(button:UIButton){
+    private func buttonAnimation(button:UIButton){
         UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping:0.5, initialSpringVelocity: 0.5,options: [.allowUserInteraction],
                        animations: {
 //            self.emitterLayer.birthRate = 5

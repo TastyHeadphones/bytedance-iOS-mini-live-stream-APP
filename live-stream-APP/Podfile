@@ -5,7 +5,7 @@ source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 target 'live-stream-APP' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'HWPanModal', '~> 0.6.0'
+  pod 'AgoraRtcEngine_iOS'
   # Pods for live-stream-APP
 
 end

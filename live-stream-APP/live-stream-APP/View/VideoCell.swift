@@ -7,7 +7,6 @@
 
 import UIKit
 import AVKit
-import HWPanModal
 
 class VideoCell: UICollectionViewCell {
     //    static let identifer = "videoCell"
@@ -117,7 +116,8 @@ class VideoCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-//        video = nil
+        super.prepareForReuse()
+        self.commentView.dataSource = nil
     }
     
     

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AVKit
 class VideoView:UICollectionView{
     
     

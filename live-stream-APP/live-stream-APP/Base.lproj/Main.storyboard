@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aoz-ut-5vB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TOb-zL-1cP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -9,17 +9,48 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="hu0-cc-Y1j">
+        <!--看直播-->
+        <scene sceneID="A4X-YO-PBs">
             <objects>
-                <viewController id="Aoz-ut-5vB" customClass="ViewController" customModule="live_stream_APP" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Us3-nZ-xGC" customClass="VideoView" customModule="live_stream_APP" customModuleProvider="target">
+                <viewController id="K1A-co-x4F" customClass="AudienceViewController" customModule="live_stream_APP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NtC-67-NNg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="PX8-ID-rSc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="看直播" image="video" catalog="system" id="FRI-2T-olr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cb2-br-hIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2165" y="523"/>
+        </scene>
+        <!--直播-->
+        <scene sceneID="NUu-Fd-4BS">
+            <objects>
+                <viewController id="Nuc-T2-NtA" customClass="BroadcasterViewController" customModule="live_stream_APP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xEm-Ta-sKm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ofQ-Tg-0ZE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="直播" image="plus" catalog="system" id="Yvj-B0-b5I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="il1-Lg-hcR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1029" y="34"/>
+        </scene>
+        <!--看视频-->
+        <scene sceneID="69u-Zb-g29">
+            <objects>
+                <viewController id="Ziw-zl-i8h" customClass="VideoViewController" customModule="live_stream_APP" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="N0A-aG-D6F" customClass="VideoView" customModule="live_stream_APP" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <gestureRecognizers/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g33-pU-37J">
-                            <size key="itemSize" width="414" height="820"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nDu-1B-R7c">
+                            <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -30,7 +61,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0ZG-yB-LMG">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="820"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="D8Y-2F-EG7" userLabel="Gift View">
                                             <rect key="frame" x="310.5" y="50" width="103.5" height="621"/>
@@ -134,13 +165,10 @@
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhS-St-s5c">
-                                            <rect key="frame" x="360" y="766" width="46" height="46"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="WhS-St-s5c" secondAttribute="height" multiplier="1:1" id="Ghl-cV-JeQ"/>
-                                            </constraints>
+                                            <rect key="frame" x="363" y="676" width="46" height="31"/>
                                             <color key="tintColor" systemColor="systemPinkColor"/>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" image="gift.fill" catalog="system"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="gift.fill" catalog="system" title=""/>
                                             <connections>
                                                 <action selector="gift:" destination="GeV-Ec-lDj" eventType="touchUpInside" id="UgQ-ct-ClF"/>
                                                 <segue destination="Lgy-aC-4J1" kind="show" identifier="gift" id="x85-QB-vij"/>
@@ -153,12 +181,12 @@
                                         <constraint firstAttribute="trailing" secondItem="D8Y-2F-EG7" secondAttribute="trailing" id="1aO-IX-vHg"/>
                                         <constraint firstItem="Nya-cF-G1D" firstAttribute="width" secondItem="0ZG-yB-LMG" secondAttribute="width" multiplier="0.5" id="8vF-YK-331"/>
                                         <constraint firstItem="D8Y-2F-EG7" firstAttribute="width" secondItem="0ZG-yB-LMG" secondAttribute="width" multiplier="0.25" id="BVx-bX-rTd"/>
+                                        <constraint firstItem="WhS-St-s5c" firstAttribute="top" secondItem="D8Y-2F-EG7" secondAttribute="bottom" constant="5" id="DMZ-2G-yyE"/>
                                         <constraint firstItem="Nya-cF-G1D" firstAttribute="top" secondItem="0ZG-yB-LMG" secondAttribute="top" constant="50" id="GCI-eR-dfG"/>
                                         <constraint firstItem="D8Y-2F-EG7" firstAttribute="top" secondItem="QGS-Po-2fk" secondAttribute="top" id="Iid-lv-nM8"/>
                                         <constraint firstItem="Nya-cF-G1D" firstAttribute="leading" secondItem="0ZG-yB-LMG" secondAttribute="leading" id="Ke7-aD-5Y9"/>
-                                        <constraint firstItem="WhS-St-s5c" firstAttribute="bottom" secondItem="0ZG-yB-LMG" secondAttribute="bottomMargin" id="S5A-7j-xWD"/>
-                                        <constraint firstItem="WhS-St-s5c" firstAttribute="trailing" secondItem="0ZG-yB-LMG" secondAttribute="trailingMargin" id="XsT-9H-xp4"/>
                                         <constraint firstAttribute="trailing" secondItem="PyI-So-P6X" secondAttribute="trailing" constant="10" id="ZoJ-of-tpN"/>
+                                        <constraint firstAttribute="trailing" secondItem="WhS-St-s5c" secondAttribute="trailing" constant="5" id="d00-Dg-AQd"/>
                                         <constraint firstItem="PyI-So-P6X" firstAttribute="centerY" secondItem="0ZG-yB-LMG" secondAttribute="centerY" id="kDS-Fl-Rrg"/>
                                     </constraints>
                                 </collectionViewCellContentView>
@@ -173,13 +201,34 @@
                             </collectionViewCell>
                         </cells>
                     </collectionView>
+                    <tabBarItem key="tabBarItem" title="看视频" image="play" catalog="system" id="Dmr-6E-PyG"/>
                     <connections>
-                        <outlet property="videoView" destination="Us3-nZ-xGC" id="eYO-R3-gN8"/>
+                        <outlet property="videoView" destination="N0A-aG-D6F" id="x8a-hm-NfA"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wWv-zg-lIU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5b-eh-jze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42.028985507246382" y="-5.3571428571428568"/>
+            <point key="canvasLocation" x="-1314" y="-649"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="R3S-W8-CAV">
+            <objects>
+                <tabBarController id="TOb-zL-1cP" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F9e-Va-PSH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ziw-zl-i8h" kind="relationship" relationship="viewControllers" id="Ryd-kq-60v"/>
+                        <segue destination="Nuc-T2-NtA" kind="relationship" relationship="viewControllers" id="b2K-jl-QMK"/>
+                        <segue destination="K1A-co-x4F" kind="relationship" relationship="viewControllers" id="Lsp-jw-cXy"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kIo-Dc-lmG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2164" y="-253"/>
         </scene>
         <!--Gift View Controller-->
         <scene sceneID="0U2-c8-flE">
@@ -249,7 +298,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ae-0N-CCX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="c0a-dO-XlT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="850.72463768115949" y="-5.3571428571428568"/>
+            <point key="canvasLocation" x="-510" y="-650"/>
         </scene>
     </scenes>
     <resources>
@@ -257,9 +306,12 @@
         <image name="emoji_18" width="34" height="32"/>
         <image name="emoji_24" width="32" height="32"/>
         <image name="gift.fill" catalog="system" width="128" height="124"/>
+        <image name="play" catalog="system" width="120" height="128"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="return" catalog="system" width="128" height="101"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
+        <image name="video" catalog="system" width="128" height="83"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2948D49ED1E32868AA55CEF3 /* Pods_live_stream_APP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F64B74B9AFE0E1E587563E /* Pods_live_stream_APP.framework */; };
 		3720268A277176450092B904 /* CommentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37202689277176450092B904 /* CommentDataSource.swift */; };
+		3749EC48278AD60F0050D5B0 /* AudienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3749EC47278AD60F0050D5B0 /* AudienceViewController.swift */; };
 		374E18772767867D00B61C7A /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E18762767867D00B61C7A /* VideoCell.swift */; };
 		37868B22277AA691009121C0 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37868B21277AA691009121C0 /* GiftViewController.swift */; };
 		37868B3C277AE31F009121C0 /* Spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 37868B3A277AE31F009121C0 /* Spark.sks */; };
 		37868B3D277AE31F009121C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37868B3B277AE31F009121C0 /* Assets.xcassets */; };
 		37911682277097860005EA77 /* Emoji.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37911681277097860005EA77 /* Emoji.xcassets */; };
+		37C75970278ABD4100563FBE /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C7596F278ABD4100563FBE /* KeyCenter.swift */; };
+		37C75972278ABDFB00563FBE /* BroadcasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C75971278ABDFB00563FBE /* BroadcasterViewController.swift */; };
 		37F1A70B275C467600FE66B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1A70A275C467600FE66B8 /* AppDelegate.swift */; };
 		37F1A70D275C467600FE66B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1A70C275C467600FE66B8 /* SceneDelegate.swift */; };
-		37F1A70F275C467600FE66B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1A70E275C467600FE66B8 /* ViewController.swift */; };
+		37F1A70F275C467600FE66B8 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1A70E275C467600FE66B8 /* VideoViewController.swift */; };
 		37F1A712275C467600FE66B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F1A710275C467600FE66B8 /* Main.storyboard */; };
 		37F1A715275C467600FE66B8 /* live_stream_APP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37F1A713275C467600FE66B8 /* live_stream_APP.xcdatamodeld */; };
 		37F1A717275C467700FE66B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F1A716275C467700FE66B8 /* Assets.xcassets */; };
@@ -24,20 +26,26 @@
 		37F1A725275C4F6200FE66B8 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1A724275C4F6200FE66B8 /* VideoView.swift */; };
 		37F1A727275C968D00FE66B8 /* VideoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1A726275C968D00FE66B8 /* VideoDataSource.swift */; };
 		37F94D96275F396900F356B0 /* demo1.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 37F94D95275F396900F356B0 /* demo1.MP4 */; };
+		DDA440AFF3BCE283BBB656C3 /* Pods_live_stream_APP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51B07AA1027C80E1274D157 /* Pods_live_stream_APP.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		004C7251A609669E9C7CA882 /* Pods-live-stream-APP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-live-stream-APP.debug.xcconfig"; path = "Target Support Files/Pods-live-stream-APP/Pods-live-stream-APP.debug.xcconfig"; sourceTree = "<group>"; };
 		37202689277176450092B904 /* CommentDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDataSource.swift; sourceTree = "<group>"; };
+		3749EC47278AD60F0050D5B0 /* AudienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudienceViewController.swift; sourceTree = "<group>"; };
 		374E18762767867D00B61C7A /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		37868B21277AA691009121C0 /* GiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
 		37868B3A277AE31F009121C0 /* Spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Spark.sks; sourceTree = "<group>"; };
 		37868B3B277AE31F009121C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37911681277097860005EA77 /* Emoji.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Emoji.xcassets; path = "../../../bytedance-iOS-practice-project/basic functions/basic functions/Emoji.xcassets"; sourceTree = "<group>"; };
+		37C7596F278ABD4100563FBE /* KeyCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
+		37C75971278ABDFB00563FBE /* BroadcasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcasterViewController.swift; sourceTree = "<group>"; };
+		37CC3B3E277DEEE900A74EEB /* Pods_live_stream_APP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_live_stream_APP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37CC3B42277DF19D00A74EEB /* Pods_live_stream_APP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_live_stream_APP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F1A707275C467600FE66B8 /* live-stream-APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "live-stream-APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F1A70A275C467600FE66B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37F1A70C275C467600FE66B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		37F1A70E275C467600FE66B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37F1A70E275C467600FE66B8 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		37F1A711275C467600FE66B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37F1A714275C467600FE66B8 /* live_stream_APP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = live_stream_APP.xcdatamodel; sourceTree = "<group>"; };
 		37F1A716275C467700FE66B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,8 +54,8 @@
 		37F1A724275C4F6200FE66B8 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		37F1A726275C968D00FE66B8 /* VideoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDataSource.swift; sourceTree = "<group>"; };
 		37F94D95275F396900F356B0 /* demo1.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo1.MP4; sourceTree = "<group>"; };
-		57F64B74B9AFE0E1E587563E /* Pods_live_stream_APP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_live_stream_APP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1834DB004A678D464C0FC77 /* Pods-live-stream-APP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-live-stream-APP.release.xcconfig"; path = "Target Support Files/Pods-live-stream-APP/Pods-live-stream-APP.release.xcconfig"; sourceTree = "<group>"; };
+		D51B07AA1027C80E1274D157 /* Pods_live_stream_APP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_live_stream_APP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2948D49ED1E32868AA55CEF3 /* Pods_live_stream_APP.framework in Frameworks */,
+				DDA440AFF3BCE283BBB656C3 /* Pods_live_stream_APP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +73,7 @@
 		2F5E60CED9244EB34CD772A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				57F64B74B9AFE0E1E587563E /* Pods_live_stream_APP.framework */,
+				D51B07AA1027C80E1274D157 /* Pods_live_stream_APP.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -87,8 +95,27 @@
 				37868B21277AA691009121C0 /* GiftViewController.swift */,
 				37868B3A277AE31F009121C0 /* Spark.sks */,
 				37868B3B277AE31F009121C0 /* Assets.xcassets */,
+				37C75971278ABDFB00563FBE /* BroadcasterViewController.swift */,
+				3749EC47278AD60F0050D5B0 /* AudienceViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		37C7596E278AB7B400563FBE /* Agora */ = {
+			isa = PBXGroup;
+			children = (
+				37C7596F278ABD4100563FBE /* KeyCenter.swift */,
+			);
+			path = Agora;
+			sourceTree = "<group>";
+		};
+		37CC3B48277DF4B100A74EEB /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				37CC3B42277DF19D00A74EEB /* Pods_live_stream_APP.framework */,
+				37CC3B3E277DEEE900A74EEB /* Pods_live_stream_APP.framework */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		37F1A6FE275C467600FE66B8 = {
@@ -98,6 +125,7 @@
 				37F1A708275C467600FE66B8 /* Products */,
 				A0015BC50BC2106648C49256 /* Pods */,
 				2F5E60CED9244EB34CD772A2 /* Frameworks */,
+				37CC3B48277DF4B100A74EEB /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,12 +140,13 @@
 		37F1A709275C467600FE66B8 /* live-stream-APP */ = {
 			isa = PBXGroup;
 			children = (
+				37C7596E278AB7B400563FBE /* Agora */,
 				372026882771762B0092B904 /* Data */,
 				374E1875276785B100B61C7A /* View */,
 				37F1A721275C486000FE66B8 /* Resource */,
 				37F1A70A275C467600FE66B8 /* AppDelegate.swift */,
 				37F1A70C275C467600FE66B8 /* SceneDelegate.swift */,
-				37F1A70E275C467600FE66B8 /* ViewController.swift */,
+				37F1A70E275C467600FE66B8 /* VideoViewController.swift */,
 				37F1A710275C467600FE66B8 /* Main.storyboard */,
 				37F1A716275C467700FE66B8 /* Assets.xcassets */,
 				37911681277097860005EA77 /* Emoji.xcassets */,
@@ -156,7 +185,7 @@
 				37F1A703275C467600FE66B8 /* Sources */,
 				37F1A704275C467600FE66B8 /* Frameworks */,
 				37F1A705275C467600FE66B8 /* Resources */,
-				8A14C0ACA45FE18F416770B1 /* [CP] Embed Pods Frameworks */,
+				D56329F4848D32535E979BDE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,7 +269,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8A14C0ACA45FE18F416770B1 /* [CP] Embed Pods Frameworks */ = {
+		D56329F4848D32535E979BDE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -264,13 +293,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37F1A70F275C467600FE66B8 /* ViewController.swift in Sources */,
+				37C75970278ABD4100563FBE /* KeyCenter.swift in Sources */,
+				37F1A70F275C467600FE66B8 /* VideoViewController.swift in Sources */,
 				374E18772767867D00B61C7A /* VideoCell.swift in Sources */,
 				37F1A727275C968D00FE66B8 /* VideoDataSource.swift in Sources */,
 				37F1A725275C4F6200FE66B8 /* VideoView.swift in Sources */,
 				37868B22277AA691009121C0 /* GiftViewController.swift in Sources */,
 				37F1A70B275C467600FE66B8 /* AppDelegate.swift in Sources */,
 				3720268A277176450092B904 /* CommentDataSource.swift in Sources */,
+				3749EC48278AD60F0050D5B0 /* AudienceViewController.swift in Sources */,
+				37C75972278ABDFB00563FBE /* BroadcasterViewController.swift in Sources */,
 				37F1A70D275C467600FE66B8 /* SceneDelegate.swift in Sources */,
 				37F1A715275C467600FE66B8 /* live_stream_APP.xcdatamodeld in Sources */,
 			);
@@ -423,8 +455,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4WN46VZ7RJ;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "live-stream-APP/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "给予相机权限用来启动直播";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "给予麦克风权限用来启动直播";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -435,11 +470,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.xnlamp.live-stream-APP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -452,8 +490,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4WN46VZ7RJ;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "live-stream-APP/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "给予相机权限用来启动直播";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "给予麦克风权限用来启动直播";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -469,6 +510,8 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};

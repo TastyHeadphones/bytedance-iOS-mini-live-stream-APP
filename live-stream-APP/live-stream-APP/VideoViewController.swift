@@ -8,7 +8,7 @@
 import UIKit
 import AVKit
 
-class ViewController: UIViewController {
+class VideoViewController: UIViewController {
     
     
     @IBOutlet var videoView: VideoView!
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     
         
 }
-extension ViewController:UICollectionViewDataSource{
+extension VideoViewController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return VideoDataSource.sharedInstance.videos.count
     }

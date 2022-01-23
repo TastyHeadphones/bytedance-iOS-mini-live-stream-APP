@@ -32,6 +32,12 @@
                                     <constraint firstAttribute="width" secondItem="Spo-BH-NwX" secondAttribute="height" multiplier="1:1" id="Nyi-TV-YTd"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主播不在线 请等待" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlb-Ji-tm6">
+                                <rect key="frame" x="135.5" y="44" width="143" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PX8-ID-rSc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -40,6 +46,8 @@
                             <constraint firstItem="PX8-ID-rSc" firstAttribute="bottom" secondItem="o94-ZC-1cH" secondAttribute="bottom" constant="20" id="0g9-sa-JH9"/>
                             <constraint firstItem="Spo-BH-NwX" firstAttribute="centerY" secondItem="NtC-67-NNg" secondAttribute="centerY" id="8P9-4o-9uX"/>
                             <constraint firstItem="Spo-BH-NwX" firstAttribute="trailing" secondItem="PX8-ID-rSc" secondAttribute="trailing" id="RJg-4j-IJJ"/>
+                            <constraint firstItem="Wlb-Ji-tm6" firstAttribute="centerX" secondItem="NtC-67-NNg" secondAttribute="centerX" id="WW0-8f-Vul"/>
+                            <constraint firstItem="Wlb-Ji-tm6" firstAttribute="top" secondItem="PX8-ID-rSc" secondAttribute="top" id="kmn-hv-B2w"/>
                             <constraint firstItem="Spo-BH-NwX" firstAttribute="width" secondItem="Spo-BH-NwX" secondAttribute="height" multiplier="1:1" id="oad-1L-8oP"/>
                             <constraint firstItem="Spo-BH-NwX" firstAttribute="centerX" secondItem="NtC-67-NNg" secondAttribute="centerX" id="sMq-Lq-rGI"/>
                             <constraint firstItem="o94-ZC-1cH" firstAttribute="centerX" secondItem="NtC-67-NNg" secondAttribute="centerX" id="tON-9f-Jgm"/>
@@ -48,6 +56,7 @@
                     <tabBarItem key="tabBarItem" title="看直播" image="video" catalog="system" id="FRI-2T-olr"/>
                     <connections>
                         <outlet property="networkImage" destination="Spo-BH-NwX" id="J5m-HD-TGv"/>
+                        <outlet property="statusLable" destination="Wlb-Ji-tm6" id="6pO-BK-5bw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cb2-br-hIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

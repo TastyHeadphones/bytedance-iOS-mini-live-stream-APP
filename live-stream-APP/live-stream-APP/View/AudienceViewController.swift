@@ -12,6 +12,9 @@ import Network
 
 class AudienceViewController: UIViewController {
     //监测网络是否正常并进行处理
+    @IBOutlet var statusLable: UILabel!
+    
+    
     let monitor = NWPathMonitor()
     @IBOutlet var networkImage: UIImageView!
     
@@ -115,6 +118,8 @@ extension AudienceViewController: AgoraRtcEngineDelegate {
         videoCanvas.uid = uid
         videoCanvas.renderMode = .hidden
         videoCanvas.view = remoteView
+        statusLable.text = ""
+        
         // 设置远端视图
         agoraKit?.setupRemoteVideo(videoCanvas)
     }

@@ -7,19 +7,37 @@
 
 import UIKit
 import AgoraRtcKit
+import Network
+
 
 class AudienceViewController: UIViewController {
+    //监测网络是否正常并进行处理
+    let monitor = NWPathMonitor()
+    @IBOutlet var networkImage: UIImageView!
+    
     var agoraKit: AgoraRtcEngineKit?
     // 定义 remoteView 变量
     var remoteView: UIView!
     
-    @IBAction func gift(){
-        print("Gift tapped")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //监测网络情况
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                OperationQueue.main.addOperation {
+                    self.networkImage.image = nil
+                }
+            } else {
+                OperationQueue.main.addOperation {
+                    self.networkImage.image = UIImage(named: "emoji_68")
+                }
+            }
+            
+            print(path.isExpensive)
+        }
+        
+        let queue = DispatchQueue(label: "Monitor")
+        monitor.start(queue: queue)
         // 调用初始化视频窗口函数
         initView()
         // 后续步骤调用 Agora API 使用的函数
@@ -38,7 +56,7 @@ class AudienceViewController: UIViewController {
         setClientRole()
     }
     
-  
+    
     
     // 设置视频窗口布局
     override func viewDidLayoutSubviews() {
@@ -46,7 +64,7 @@ class AudienceViewController: UIViewController {
         remoteView.frame = self.view.bounds
     }
     
-  
+    
     func initView() {
         // 初始化远端视频窗口。只有当远端用户为主播时，才会显示视频画面
         remoteView = UIView()

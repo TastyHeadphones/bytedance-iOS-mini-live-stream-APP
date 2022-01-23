@@ -12,7 +12,6 @@ class VideoCell: UICollectionViewCell {
     //    static let identifer = "videoCell"
     @IBOutlet var commentView: UITableView!
     @IBOutlet var textField: UITextField!
-    @IBOutlet var giftTableView: UITableView!
     
     var video: Video!
     //视频循环播放

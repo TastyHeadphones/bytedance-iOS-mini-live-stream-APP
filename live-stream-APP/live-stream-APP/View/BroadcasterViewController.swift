@@ -7,17 +7,56 @@
 
 import UIKit
 import AgoraRtcKit
+import Network
+
 
 class BroadcasterViewController: UIViewController {
+    //监测网络是否正常并进行处理
+    let monitor = NWPathMonitor()
+    @IBOutlet var networkImage: UIImageView!
+    
     var agoraKit: AgoraRtcEngineKit?
     // 定义 localView 变量
     var localView: UIView!
     // 定义 remoteView 变量
     var remoteView: UIView!
+    //显示当前时间
+    @IBOutlet var timeLable: UILabel!
+    
+    var timer = Timer()
+    
+    private func getCurrentTime() {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(self.currentTime) , userInfo: nil, repeats: true)
+    }
+    
+    @objc func currentTime() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm:ss"
+        timeLable.text = formatter.string(from: Date())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //监测网络情况
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                OperationQueue.main.addOperation {
+                    self.networkImage.image = nil
+                }
+            } else {
+                OperationQueue.main.addOperation {
+                    self.networkImage.image = UIImage(named: "emoji_68")
+                }
+            }
+
+            print(path.isExpensive)
+        }
         
-        // Do any additional setup after loading the view.
+        let queue = DispatchQueue(label: "Monitor")
+        monitor.start(queue: queue)
+        
+        //获取当前时间
+        getCurrentTime()
         // 调用初始化视频窗口函数
         initView()
         // 后续步骤调用 Agora API 使用的函数
@@ -31,7 +70,7 @@ class BroadcasterViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-    
+        
         // 后续步骤调用 Agora API 使用的函数
         initializeAgoraEngine()
         setChannelProfile()
@@ -39,24 +78,25 @@ class BroadcasterViewController: UIViewController {
         setupLocalVideo()
     }
     
- 
+    
     // 设置视频窗口布局
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         localView.frame = self.view.bounds
     }
     
-
+    
     
     
     
     func initView() {
         // 初始化远端视频窗口。只有当远端用户为主播时，才会显示视频画面
-//        remoteView = UIView()
-//        self.view.addSubview(remoteView)
+        //        remoteView = UIView()
+        //        self.view.addSubview(remoteView)
         // 初始化本地视频窗口。只有当本地用户为主播时，才会显示视频画面
         localView = UIView()
         self.view.addSubview(localView)
+        self.view.sendSubviewToBack(localView)
     }
     
     func initializeAgoraEngine() {

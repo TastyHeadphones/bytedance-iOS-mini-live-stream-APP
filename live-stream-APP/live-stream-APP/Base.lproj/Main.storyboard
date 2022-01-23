@@ -23,18 +23,32 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="giftcard.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="gift" destination="K1A-co-x4F" eventType="touchUpInside" id="txc-4D-PQK"/>
+                                    <segue destination="Lgy-aC-4J1" kind="presentation" id="ujj-rB-qvZ"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Spo-BH-NwX">
+                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Spo-BH-NwX" secondAttribute="height" multiplier="1:1" id="Nyi-TV-YTd"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PX8-ID-rSc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Spo-BH-NwX" firstAttribute="leading" secondItem="PX8-ID-rSc" secondAttribute="leading" id="0XN-6Z-0wY"/>
                             <constraint firstItem="PX8-ID-rSc" firstAttribute="bottom" secondItem="o94-ZC-1cH" secondAttribute="bottom" constant="20" id="0g9-sa-JH9"/>
+                            <constraint firstItem="Spo-BH-NwX" firstAttribute="centerY" secondItem="NtC-67-NNg" secondAttribute="centerY" id="8P9-4o-9uX"/>
+                            <constraint firstItem="Spo-BH-NwX" firstAttribute="trailing" secondItem="PX8-ID-rSc" secondAttribute="trailing" id="RJg-4j-IJJ"/>
+                            <constraint firstItem="Spo-BH-NwX" firstAttribute="width" secondItem="Spo-BH-NwX" secondAttribute="height" multiplier="1:1" id="oad-1L-8oP"/>
+                            <constraint firstItem="Spo-BH-NwX" firstAttribute="centerX" secondItem="NtC-67-NNg" secondAttribute="centerX" id="sMq-Lq-rGI"/>
                             <constraint firstItem="o94-ZC-1cH" firstAttribute="centerX" secondItem="NtC-67-NNg" secondAttribute="centerX" id="tON-9f-Jgm"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="看直播" image="video" catalog="system" id="FRI-2T-olr"/>
+                    <connections>
+                        <outlet property="networkImage" destination="Spo-BH-NwX" id="J5m-HD-TGv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cb2-br-hIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,14 +61,45 @@
                     <view key="view" contentMode="scaleToFill" id="xEm-Ta-sKm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMf-vT-MhS">
+                                <rect key="frame" x="167" y="44" width="80" height="21"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Lpp-g6-G1d"/>
+                                    <constraint firstAttribute="width" constant="80" id="ReM-gc-yBm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cAr-eW-arD">
+                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cAr-eW-arD" secondAttribute="height" multiplier="1:1" id="uKZ-4s-drv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ofQ-Tg-0ZE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cAr-eW-arD" firstAttribute="centerY" secondItem="xEm-Ta-sKm" secondAttribute="centerY" id="2xN-04-0KK"/>
+                            <constraint firstItem="kMf-vT-MhS" firstAttribute="centerX" secondItem="xEm-Ta-sKm" secondAttribute="centerX" id="FPd-6E-QDF"/>
+                            <constraint firstItem="cAr-eW-arD" firstAttribute="leading" secondItem="ofQ-Tg-0ZE" secondAttribute="leading" id="WVE-DT-Gcr"/>
+                            <constraint firstItem="cAr-eW-arD" firstAttribute="centerX" secondItem="xEm-Ta-sKm" secondAttribute="centerX" id="fL7-sM-aiS"/>
+                            <constraint firstItem="kMf-vT-MhS" firstAttribute="top" secondItem="ofQ-Tg-0ZE" secondAttribute="top" id="g50-3s-eVM"/>
+                            <constraint firstItem="ofQ-Tg-0ZE" firstAttribute="trailing" secondItem="cAr-eW-arD" secondAttribute="trailing" id="zhI-Hu-OpQ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="直播" image="plus" catalog="system" id="Yvj-B0-b5I"/>
+                    <connections>
+                        <outlet property="networkImage" destination="cAr-eW-arD" id="HKp-Qu-zLt"/>
+                        <outlet property="timeLable" destination="kMf-vT-MhS" id="Vg2-yn-x6b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="il1-Lg-hcR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1029" y="34"/>
+            <point key="canvasLocation" x="-1030.4347826086957" y="33.482142857142854"/>
         </scene>
         <!--看视频-->
         <scene sceneID="69u-Zb-g29">
@@ -219,7 +264,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uR7-i0-pGV">
-                                <rect key="frame" x="0.0" y="655" width="414" height="207"/>
+                                <rect key="frame" x="0.0" y="689" width="414" height="207"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDX-Cq-X4s">
                                         <rect key="frame" x="0.0" y="0.0" width="103.5" height="207"/>
@@ -259,16 +304,15 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.50361394557823125" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uR7-i0-pGV" secondAttribute="height" multiplier="20:10" id="Tsq-a0-Wqg"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="T55-Vp-v7s"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="uR7-i0-pGV" secondAttribute="bottom" constant="34" id="eQc-a8-8MV"/>
+                            <constraint firstItem="uR7-i0-pGV" firstAttribute="bottom" secondItem="90b-al-CwE" secondAttribute="bottom" id="dtm-qd-H9Y"/>
                             <constraint firstAttribute="trailing" secondItem="uR7-i0-pGV" secondAttribute="trailing" id="gfa-aY-hic"/>
                             <constraint firstItem="uR7-i0-pGV" firstAttribute="leading" secondItem="90b-al-CwE" secondAttribute="leading" id="vh6-uc-ljs"/>
                         </constraints>

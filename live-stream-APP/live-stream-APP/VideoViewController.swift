@@ -37,15 +37,6 @@ class VideoViewController: UIViewController {
         videoView?.frame = UIScreen.main.bounds
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier{
-        case "gift"?:
-            let giftVC = segue.destination as! GiftViewController
-            giftVC.giftTableView = videoCell.giftTableView
-        default:
-            preconditionFailure("Unexpected segue identifier.")
-        }
-    }
     
         
 }

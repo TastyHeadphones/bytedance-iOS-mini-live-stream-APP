@@ -12,6 +12,11 @@ class AudienceViewController: UIViewController {
     var agoraKit: AgoraRtcEngineKit?
     // 定义 remoteView 变量
     var remoteView: UIView!
+    
+    @IBAction func gift(){
+        print("Gift tapped")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -46,7 +51,7 @@ class AudienceViewController: UIViewController {
         // 初始化远端视频窗口。只有当远端用户为主播时，才会显示视频画面
         remoteView = UIView()
         self.view.addSubview(remoteView)
-        
+        self.view.sendSubviewToBack(remoteView)
     }
     
     func initializeAgoraEngine() {
